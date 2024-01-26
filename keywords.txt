@@ -1,0 +1,26 @@
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+Sensor_SCD41_Mode	KEYWORD1
+Sensor_SCD41	KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+Sensor_SCD41	KEYWORD2
+init	KEYWORD2
+readDataMeasurement	KEYWORD2
+singleMeasurement	KEYWORD2
+printUint16Hex	KEYWORD2
+printSerialNumber	KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################	
+SCD41_5s_with_ASC_mode	LITERAL1
+SCD41_30s_with_ASC_mode	LITERAL1
+SCD41_5s_mode	LITERAL1
+SCD41_30s_mode	LITERAL1
+SCD41_manual_calibration	LITERAL1
+SCD41_single_mode	LITERAL1
+CO2_400PPM	LITERAL1
