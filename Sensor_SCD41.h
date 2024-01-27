@@ -70,7 +70,7 @@ protected:
 private:
     SensirionI2CScd4x scd4x;
     uint16_t error;
-    char errorMessage[128];
+    char errorMessage[64];
     uint16_t serial0; // serial number SCD41, part 0
     uint16_t serial1; // serial number SCD41, part 1
     uint16_t serial2; // serial number SCD41, part 2
