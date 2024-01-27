@@ -30,9 +30,9 @@ public:
     Sensor_SCD41()
     {
         serial0 = serial1 = serial2 =
-            frc_correction =
-                isReady =
-                    dbg = false;
+        frc_correction =
+        isReady =
+        dbg = false;
     }
     virtual ~Sensor_SCD41(){};
 
@@ -70,7 +70,7 @@ protected:
 private:
     SensirionI2CScd4x scd4x;
     uint16_t error;
-    char errorMessage[256];
+    char errorMessage[128];
     uint16_t serial0; // serial number SCD41, part 0
     uint16_t serial1; // serial number SCD41, part 1
     uint16_t serial2; // serial number SCD41, part 2
