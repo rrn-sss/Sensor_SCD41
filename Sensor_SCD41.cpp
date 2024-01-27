@@ -14,7 +14,7 @@ bool Sensor_SCD41::init(TwoWire& i2cBus, Sensor_SCD41_Mode mode, bool debug)
     error = scd4x.stopPeriodicMeasurement();
     if (error && dbg ) {
         Serial.println("Error trying to execute stopPeriodicMeasurement(): ");
-        errorToString(error, errorMessage, 256);
+        errorToString(error, errorMessage, 64);
         Serial.println(errorMessage);
     }
 
@@ -24,7 +24,7 @@ bool Sensor_SCD41::init(TwoWire& i2cBus, Sensor_SCD41_Mode mode, bool debug)
         if (error) 
         {
             Serial.println("Error trying to execute getSerialNumber(): ");
-            errorToString(error, errorMessage, 256);
+            errorToString(error, errorMessage, 64);
             Serial.println(errorMessage);
         } else 
             printSerialNumber(serial0, serial1, serial2);
@@ -42,7 +42,7 @@ bool Sensor_SCD41::init(TwoWire& i2cBus, Sensor_SCD41_Mode mode, bool debug)
             if (error && dbg) 
             {
                 Serial.println("Error trying to execute setAutomaticSelfCalibration()");
-                errorToString(error, errorMessage, 256);
+                errorToString(error, errorMessage, 64);
                 Serial.println(errorMessage);                
             }
             else
@@ -58,7 +58,7 @@ bool Sensor_SCD41::init(TwoWire& i2cBus, Sensor_SCD41_Mode mode, bool debug)
                         Serial.println("Error trying to execute startLowPowerPeriodicMeasurement()");
                     else 
                         Serial.println("Error trying to execute startPeriodicMeasurement()");
-                    errorToString(error, errorMessage, 256);
+                    errorToString(error, errorMessage, 64);
                     Serial.println(errorMessage);
                 }
             }
@@ -122,7 +122,7 @@ bool Sensor_SCD41::isDataReady()
     if (error && dbg)
     {
         Serial.print("Error trying to execute getDataReadyFlag(): ");
-        errorToString(error, errorMessage, 256);
+        errorToString(error, errorMessage, 64);
         Serial.println(errorMessage);
     }
 
@@ -141,7 +141,7 @@ bool Sensor_SCD41::readDataMeasurement(uint16_t &co2, float &temperature, float 
             if (error) 
             {
                 Serial.print("Error trying to execute readMeasurement(): ");
-                errorToString(error, errorMessage, 256);
+                errorToString(error, errorMessage, 64);
                 Serial.println(errorMessage);
             } else if (co2 == 0) 
                     Serial.println("Invalid sample detected, skipping.");
